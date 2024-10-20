@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Webpage</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body>
+
+    <div class="container" ng-controller="MainController">
+        
+        <header>
+            <header>
+                <div class="profile-picture">
+                    <img src="image1.png" alt="Profile Picture">
+                </div>
+                <h1>{{ user.name }}</h1>
+                <p>{{ user.intro }}</p>
+            </header>
+            
+        </header>
+
+        <section id="about">
+            <h2>About Me</h2>
+            <p>{{ user.about }}</p>
+        </section>
+
+        <section id="hobbies">
+            <h2>Hobbies</h2>
+            <ul>
+                <li ng-repeat="hobby in user.hobbies">{{ hobby }}</li>
+            </ul>
+        </section>
+
+        <section id="town">
+            <h2>Native Town</h2>
+            <p>{{ user.town }}</p>
+            <img ng-src="{{ user.townImage }}" alt="Native Town">
+        </section>
+
+        <section id="family">
+            <h2>Family Members</h2>
+            <ul>
+                <li ng-repeat="family in user.family">{{ family.name }} - {{ family.relation }}</li>
+            </ul>
+        </section>
+
+        <section id="education">
+            <h2>Educational Qualifications</h2>
+            <p>{{ user.education }}</p>
+        </section>
+
+        <section id="achievements">
+            <h2>Certificates & Rewards</h2>
+            <ul>
+                <li ng-repeat="achievement in user.achievements">{{ achievement }}</li>
+            </ul>
+        </section>
+
+        <section id="contributions">
+            <h2>Contributions to Society</h2>
+            <p>{{ user.contributions }}</p>
+        </section>
+    </div>
+
+</body>
+</html>
